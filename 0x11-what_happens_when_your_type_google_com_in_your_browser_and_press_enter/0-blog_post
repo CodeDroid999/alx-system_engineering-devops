@@ -1,0 +1,23 @@
+Exploring the Journey of a Web Request: What happens when you type google.com in your browser and press Enter?
+
+When we type "https://www.google.com" in our browser and hit Enter, a fascinating chain of events occurs behind the scenes, allowing us to access the Google search engine. In this blog post, we will delve into the various components involved in this process, ranging from DNS requests to database interactions. Understanding this workflow provides insight into the intricate workings of the web stack and highlights the collaboration between different layers of technology.
+
+1. DNS Request:
+The journey begins with a Domain Name System (DNS) request. The browser sends a request to a DNS resolver to translate the human-readable domain name, "www.google.com," into an IP address. The resolver queries authoritative DNS servers to obtain the corresponding IP address, allowing the browser to establish a connection to the correct server.
+
+2. TCP/IP:
+Once the IP address is obtained, the browser initiates a Transmission Control Protocol (TCP) connection. TCP ensures reliable communication by dividing data into packets, numbering them, and reassembling them at the destination. Internet Protocol (IP) handles addressing and routing, ensuring the packets reach the correct destination.
+
+3. Firewall:
+In many scenarios, there is a firewall positioned between the client (browser) and the web server. The firewall acts as a security measure by inspecting incoming and outgoing traffic, applying rules to allow or block specific connections. It protects the network from unauthorized access and potential threats.
+
+4. HTTPS/SSL:
+During the initial connection setup, if the website employs HTTPS (Hypertext Transfer Protocol Secure), an additional step of SSL/TLS (Secure Sockets Layer/Transport Layer Security) negotiation takes place.
+5. Load-Balancer:
+In high-traffic scenarios, multiple web servers may be employed to handle incoming requests efficiently. A load balancer acts as a traffic distributor, intelligently routing requests to different web servers based on various algorithms (e.g., round-robin, least connections).
+6. Web Server:
+After passing through the load balancer, the request reaches one of the web servers hosting the website. The web server, such as Apache HTTP Server or Nginx, receives the request, processes it, and generates an appropriate response.
+7. Application Server:
+In cases where the requested web page involves dynamic content or requires server-side processing, the web server may communicate with an application server.
+8. Database:
+If the web page requires data retrieval or storage, the application server interacts with a database management system (DBMS). The DBMS, such as MySQL, PostgreSQL, or MongoDB, manages the storage and retrieval of structured data. The application server sends queries to the database, which processes them, retrieves or modifies the data, and sends the results back to the application server.
