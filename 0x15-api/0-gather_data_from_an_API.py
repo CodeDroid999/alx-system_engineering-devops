@@ -11,7 +11,7 @@ if __name__ == "__main__":
     base_url = "https://jsonplaceholder.typicode.com"
 
     # Fetch user information
-   user_url = base_url + "/users/" + str(employee_id)
+    user_url = base_url + "/users/" + str(employee_id)
     with urllib.request.urlopen(user_url) as response:
         user_data = json.loads(response.read())
 
