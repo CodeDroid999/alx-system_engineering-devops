@@ -8,10 +8,10 @@ def todo(userid):
     """doc stringed"""
     name = requests.get(
         'https://jsonplaceholder.typicode.com/users/{}'.format(
-            userid)).json().get('name')
+            userid), verify=False).json().get('name')
     tasks = requests.get(
         'https://jsonplaceholder.typicode.com/users/{}/todos'.format(
-            userid)).json()
+            userid),verify=False).json()
     tasksDone = ['\t {}\n'.format(dic.get('title')) for dic in tasks
                  if dic.get('completed')]
     if name and tasks:
