@@ -6,7 +6,7 @@ import sys
 import urllib3
 
 # Disable SSL certificate verification
-urllib3.disable_warnings()
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 if __name__ == "__main__":
     user_id = sys.argv[1]
