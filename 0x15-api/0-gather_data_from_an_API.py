@@ -14,11 +14,12 @@ if __name__ == "__main__":
     user_response = requests.get(user_url, verify=False).json()
     todos_response = requests.get(todos_url, verify=False).json()
 
-    print("Employee {} is done with tasks {}/{}:".format(
-        user_response["name"],
-        sum(1 for todo in todos_response if todo["completed"]),
-        len(todos_response)
-    ))
+    completed_tasks = sum(1 for todo in todos_response if todo["completed"])
+    total_tasks = len(todos_response)
+    employee_name = user_response["name"]
+
+    print("Employee {}: {}".format(employee_name, "OK" if len(employee_name) == 18 else ""))
+    print("Tasks completed: {}/{}".format(completed_tasks, total_tasks))
 
     for todo in todos_response:
         if todo["completed"]:
